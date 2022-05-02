@@ -9,50 +9,53 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">메뉴이야기</a>
-                    <ul class="hidden-menu">
-                        <li>
-                            <a href="#">시즌메뉴</a>
-                        </li>
-                        <li>
-                            <a href="#">음료</a>
-                        </li>
-                        <li>
-                            <a href="#">디저트</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">매장안내</a>
-                    <ul class="hidden-menu">
-                        <li>
-                            <a href="#">매장찾기</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">소식 & 공지</a>
-                </li>
-                <li>
-                    <a href="#">고객의소리</a>
-                </li>
-            </ul>
-            
-            <h1>
-                <img src="./image/headerlogo (1).svg" alt="메인로고">
-            </h1>
-            
-            <div class="header-search">
-                <input type="text" placeholder="search">
-                <button>
-                    <img src="./image/searchicon.svg" alt="검색버튼">
-                </button>
-            </div>
-        </nav>
+        <div class="wraper">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">메뉴이야기</a>
+                        <ul class="hidden-menu">
+                            <li>
+                                <a href="#">시즌메뉴</a>
+                            </li>
+                            <li>
+                                <a href="#">음료</a>
+                            </li>
+                            <li>
+                                <a href="#">디저트</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">매장안내</a>
+                        <ul class="hidden-menu">
+                            <li>
+                                <a href="#">매장찾기</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">소식 & 공지</a>
+                    </li>
+                    <li>
+                        <a href="#">고객의소리</a>
+                    </li>
+                </ul>
+                
+                <h1>
+                    <img src="./image/headerlogo (1).svg" alt="메인로고">
+                </h1>
+                
+                <div class="header-search">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <img src="./image/searchicon.svg" alt="검색버튼">
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header> 
 
     <section class="slider-all-container">
@@ -85,9 +88,9 @@
                 <span class="big-text">MEGA COFFEE</span>
             </div>
 
-            <div class="introduction-btns">
-                <ul>
-                    <li>
+            <div class="introduction-container introduction-btns">
+                <ul class="controller">
+                    <li class="on">
                         <button class="btn1">
                             <img src="./image/size-icon.svg" alt="">
                         </button>
@@ -118,66 +121,54 @@
                         </button>
                     </li>
                 </ul>
-            </div>
-
-            <div class="btn-explanation one">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/size-icon.svg" alt="">
-                    </button> 
-                    <p>빅사이즈 24oz</p>
+                <div class="text-area">
+                    <ul>
+                        <li class="active">
+                            <button>
+                                <img src="./image/size-icon.svg" alt="">
+                            </button>
+                            <span class="btn-title">BIG SIZE</span>
+                            <span class="block">남다른 기본사이즈 680ml!<br>24oz의 대용량으로 부족함 없이 즐겨보세요!</span>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="./image/Twoshot.svg" alt="">
+                            </button>
+                            <span class="btn-title">2 Shot!</span>
+                            <span class="block">BIG SIZE답게 2 Shot!<br>기본 2 Shot으로 풍부한 커피의 향기를<br>느껴보세요!</span>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="./image/cong.svg" alt="">
+                            </button>
+                            <span class="btn-title">프리미엄 원두!</span>
+                            <span class="block">100% 아라비카 프리미엄 원두를 국내<br>로스팅하여 항상 신선한 원두를 공급합니다.<br>신선한 원두의 향을 느껴보세요!</span>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="./image/money.svg" alt="">
+                            </button>
+                            <span class="btn-title">합리적인 가격</span>
+                            <span class="block">유통과정을 최소화하여 최대한 저렴한 <br>가격으로 소비자들에게 제공 할 수 있으며 <br>부담없이 즐길 수 있습니다.</span>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="./image/menu-icon.svg" alt="">
+                            </button>
+                            <span class="btn-title">차별화된 메뉴</span>
+                            <span class="block">다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수
+                                있습니다.</span>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="./image/place-icon.svg" alt="">
+                            </button>
+                            <span class="btn-title">전국 1,790개의 지점</span>
+                            <span class="block">2015 1호점 이후 현재 1,790 개의 지점!<br>항상 가까이에서 메가커피를 즐길 수 있도록<br>전국 각지에 메가커피 지점이
+                                있습니다.</span>
+                        </li>
+                    </ul>
                 </div>
-                <p>기본사이즈 24oz!<br>680ml의<br>각 지점에 공급합니다.</p>
-            </div>
-
-            <div class="btn-explanation two">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/Twoshot.svg" alt="">
-                    </button> 
-                    <p>차별화된 메뉴</p>
-                </div>
-                <p>다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수 있습니다.</p>
-            </div>
-
-            <div class="btn-explanation three">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/cong.svg" alt="">
-                    </button> 
-                    <p>차별화된 메뉴</p>
-                </div>
-                <p>다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수 있습니다.</p>
-            </div>
-
-            <div class="btn-explanation four">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/money.svg" alt="">
-                    </button> 
-                    <p>차별화된 메뉴</p>
-                </div>
-                <p>다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수 있습니다.</p>
-            </div>
-
-            <div class="btn-explanation five">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/menu-icon.svg" alt="">
-                    </button> 
-                    <p>차별화된 메뉴</p>
-                </div>
-                <p>다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수 있습니다.</p>
-            </div>
-
-            <div class="btn-explanation six">
-                <div class="btn-name">
-                    <button>
-                        <img src="./image/menu-icon.svg" alt="">
-                    </button> 
-                    <p>차별화된 메뉴</p>
-                </div>
-                <p>다양한 비주얼과 콘셉트의 음료와 계절마다<br>출시되는 시즌음료 등 80여개의 다양한 메뉴로<br>남녀노소 메가커피를 즐길 수 있습니다.</p>
             </div>
         </div>
         
@@ -283,7 +274,10 @@
                     </div>
                 </div> 
             </div>
-            <!-- 원 두개 들어가야함 -->
+            <div class="circle-box">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+            </div>
         </div>
     </section>
 
@@ -293,51 +287,50 @@
             <h2 class="text3">소식 & 이벤트를 SNS</h2>
             <span class="title-small text1">에서 빠르게!</span>
         </div>
+        <div class="wrapper2">
+            <div class="sns-all-box">
+                <div class="sns-text">
+                    <h2>MEGA's SNS</h2>
+                    <p>다양한 신메뉴와 시즌음료를<br>MEGA's SNS 에서 확인하세요!</p>
+                    <div class="tag-box">
+                        <span>#메가커피</span>
+                        <span>#메가커피 신메뉴</span>
+                        <span>#메가커피 이벤트</span>
+                    </div>
+                    <span class="sns-line"></span><!--해시태그 밑에 넣을 줄-->
 
-        <div class="sns-all-box">
-            <div class="sns-text">
-                <h2>MEGA's SNS</h2>
-                <p>다양한 신메뉴와 시즌음료를<br>MEGA's SNS 에서 확인하세요!</p>
-                <div class="tag-box">
-                    <span>#메가커피</span>
-                    <span>#메가커피 신메뉴</span>
-                    <span>#메가커피 이벤트</span>
+                    <div class="sns-img">
+                        <ul>
+                            <li>
+                                <a href="https://blog.naver.com/ekddusekddus" target="_blank">
+                                    <img src="./image/band-icon.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/megamgccoffee1/" target="_blank">
+                                    <img src="./image/face-icon.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/mega_coffee/?hl=ko" target="_blank">
+                                    <img src="./image/insta-icon.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div> 
                 </div>
-                <span class="sns-line"></span><!--해시태그 밑에 넣을 줄-->
 
-                <div class="sns-img">
-                    <ul>
-                        <li>
-                            <a href="https://blog.naver.com/ekddusekddus" target="_blank">
-                                <img src="./image/band-icon.svg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/megamgccoffee1/" target="_blank">
-                                <img src="./image/face-icon.svg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/mega_coffee/?hl=ko" target="_blank">
-                                <img src="./image/insta-icon.svg" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div> 
-                <div class="tri"></div>
-            </div>
-            <!-- 말풍선표시 -->
-            
-            <div class="sns-photo">
-                <figure class="sns-photo1"></figure>
-                <figure class="sns-photo2"></figure>
-                <figure class="sns-photo3"></figure>
-                <figure class="sns-photo4"></figure>
-                <figure class="sns-photo5"></figure>
-                <figure class="sns-photo6"></figure>
-                <figure class="sns-photo7"></figure>
-                <figure class="sns-photo8"></figure>
-                <figure class="sns-photo9"></figure>
+                <div class="sns-photo">
+                    <figure class="sns-photo1"></figure>
+                    <figure class="sns-photo2"></figure>
+                    <figure class="sns-photo3"></figure>
+                    <figure class="sns-photo4"></figure>
+                    <figure class="sns-photo5"></figure>
+                    <figure class="sns-photo6"></figure>
+                    <figure class="sns-photo7"></figure>
+                    <figure class="sns-photo8"></figure>
+                    <figure class="sns-photo9"></figure>
+                </div>
             </div>
         </div>
     </section>

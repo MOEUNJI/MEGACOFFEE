@@ -1,7 +1,36 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+@font-face {
+    font-family: 'SuncheonB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'S-CoreDream-4Regular';
 }
 
 :root {
@@ -93,6 +122,7 @@ header ul li > a {
 
 .slider li img {
     width: 100%;
+    height: 100%;
 }
 
 .slider-all-container {
@@ -140,6 +170,9 @@ header ul li > a {
     background: none;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons button>img {
@@ -176,7 +209,7 @@ header ul li > a {
 
 .mega-introduction {
     position: relative;
-    width: 1899px;
+    width: 1903px;
 }
 
 .left-back-yellow {
@@ -230,6 +263,10 @@ header ul li > a {
     padding: 0;
 }
 
+.controller> li > button:hover {
+    box-shadow: inset 3px 3px 5px #00000042;
+}
+
 .controller li > button {
     width: 50px;
     height: 50px;
@@ -237,6 +274,9 @@ header ul li > a {
     border: 1px solid #724330;
     box-shadow: 2px 3px 5px #724330;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-area {
@@ -276,7 +316,7 @@ header ul li > a {
 
 .block {
     font-size: 16px;
-    margin: 27px 0 0 44px;
+    margin: 23px 0 0 44px;
     display: block;
     line-height: 25px;
 }
@@ -287,11 +327,18 @@ header ul li > a {
     border: 1px solid #452613;
     border-radius: 50%;
     background: #fdfdfd;
-    margin: 42px 0 0 44px
+    margin: 35px 0 0 44px
 }
 
 .text-area li.active {
     opacity: 1;
+}
+
+.middle-img {
+    position: absolute;
+    right: -725px;
+    top: -250px;
+    z-index: 99999;
 }
 
 .title {
@@ -326,6 +373,24 @@ header ul li > a {
     margin: 0 5px;
 }
 
+.representative {
+    position: relative;
+    transition: 0.5s;
+}
+
+.img-zone {
+    width: 282px;
+    height: 400px;
+    transition: 0.5s;
+    box-shadow: 5px 10px 20px #00000060;
+}
+
+.img-zone > img {
+    width: 282px;
+    height: 400px;
+    transition: 0.5s;
+}
+
 .representative-menu {
     width: 100%;
     height: 800px;
@@ -333,10 +398,11 @@ header ul li > a {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    font-family: 'GmarketSansLight';
 }
 
 .all-representative {
-    width: 1430px;
+    width: 1300px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -344,21 +410,76 @@ header ul li > a {
     margin: 0 auto;
 }
 
+.to-bottom{
+    transform: translateY(200px);  
+}
+
+.to-left{
+    transform: translateX(-200px);
+}
+
+.to-right{
+    transform: translateX(200px);
+}
+
+.fade {
+    opacity: 0;
+    transition: 1s;
+}
+
+.in {
+    opacity: 1;
+    transform: none;
+}
+
 .poster-container {
     display: flex;
-    align-items: center;
     width: 100%;
 }
 
-.representative > img {
+.black-op {
+    transition: 0.5s;
     width: 282px;
     height: 400px;
-    transition: 0.5s;
-    box-shadow: 10px 10px 15px #00000042;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    opacity: 0;
 }
 
-.representative > img:hover {
-    transform: scale(1.1);
+.box-line {
+    width: 225px;
+    height: 335px;
+    border: 1px solid #fdfdfd;
+    margin: 32px 0 0 29px;
+}
+
+.block-op-first-text {
+    font-size: 18px;
+    color: #fdfdfd;
+    text-align: center;
+    border-bottom: 1px solid #fdfdfd;
+    padding: 24px 0;
+    line-height: 20px;
+}
+
+.black-op-small-text {
+    font-size: 14px;
+    color: #fdfdfd;
+    text-align: center;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    line-height: 21px;
+    font-weight: 100;
+}
+
+.representative > .img-zone:hover {
+    transform: scale(1.07);  
+}
+
+.representative > .img-zone:hover .black-op{
+    opacity: 1;
 }
 
 .hover-coffee {
@@ -369,13 +490,14 @@ header ul li > a {
 
 .representative > p {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     font-size: 21px;
     color: var(--main-color);
+    font-weight: 600;
 }
 
 .more-btn {
-    margin: 40px 240px 0 0;
+    margin: 40px 300px 0 0;
 }
 
 .more-btn > button {
@@ -395,6 +517,7 @@ header ul li > a {
 
 .second {
     background: #E8BE96;
+    font-family: 'GowunDodum-Regular';
 }
 
 .text2 {
@@ -407,7 +530,7 @@ header ul li > a {
     margin: 0 5px;
 }
 
-.series-conten-all {
+.series-content-all {
     height: 1420px;
     position: relative;
 }
@@ -461,12 +584,11 @@ header ul li > a {
     box-shadow: 5px 10px 20px #00000060;
 }
 
-
 .second-content:hover .hidden-photo2,
 .first-content:hover .hidden-photo,
 .third-content:hover .hidden-photo3 {
-        opacity: 0.5;
-    }
+    opacity: 0.5;
+}
 
 .series-content1-text {
     width: 460px;
@@ -492,11 +614,16 @@ header ul li > a {
 }
 
 .content1-small-white-text {
-    font-size: 18px;
+    font-size: 16px;
     color: #fdfdfd;
     margin-left: 50px;
     line-height: 25px;
-    font-weight: 100;
+}
+
+.series-content1-line,
+.series-content2-line,
+.series-content3-line {
+    font-family: 'GowunDodum-Regular';
 }
 
 .series-content1-line {
@@ -554,7 +681,6 @@ header ul li > a {
     line-height: 25px;
 }
 
-
 .second-content:hover .hidden-photo2{
     visibility: visible;
 }
@@ -607,18 +733,18 @@ header ul li > a {
     height: 700px;
     border-radius: 50%;
     background: #fdfdfd;
-    opacity: 0.5;
+    opacity: 0.4;
     position: absolute;
     bottom: 144px;
-    right: 0;
+    left: 0;
     z-index: 0;
-    animation: rotate1 6s linear infinite;
-    transform-origin: 50% 60%;
+    animation: rotate1 12s linear infinite;
+    transform-origin: 50% 10%;
 }
 
 @keyframes rotate1 {
     100% {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 
@@ -631,13 +757,13 @@ header ul li > a {
     position: absolute;
     bottom: 0;
     right: 280px;
-    animation: rotate2 7s linear infinite;
-    transform-origin: 40% 70%;
+    animation: rotate2 10s linear infinite;
+    transform-origin: 80% 30%;
 }
 
 @keyframes rotate2 {
     100% {
-        transform: rotate(-360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -668,6 +794,7 @@ header ul li > a {
     background: url(../image/sns-text-back.svg) no-repeat;
     width: 635px;
     height: 470px;
+    font-family: 'Cafe24SsurroundAir';
 }
 
 .sns-text > h2 {
@@ -682,7 +809,8 @@ header ul li > a {
     margin: 0 0 16px 90px;
     font-size: 24px;
     color: var(--main-color);
-    font-weight: 100;
+    font-weight: 400;
+    line-height: 27px;
 }
 
 .tag-box {
@@ -731,18 +859,27 @@ header ul li > a {
     flex-wrap: wrap;
 }
 
+.sns-photo:hover > figure {
+    filter: brightness(0.5);
+}
+
 .sns-photo > figure {
     box-shadow: 5px 5px 10px #00000060;
     overflow: hidden;
+    background-size: 100%;
+    background-position: center;
+    transition: 0.5s;
 }
 
-/* transform scale 들어가야함 */
+.sns-photo > figure:hover {
+    background-size: 110%;
+    filter: brightness(1.0);
+}
 
 .sns-photo1 {
     background: url(../image/202101131106397783_l.jpg) no-repeat;
     width: 380px;
     height: 162px;
-    background-size: 380px 162px;
     margin-right: 7px;
 }
 
@@ -750,7 +887,6 @@ header ul li > a {
     background: url(../image/sns1.jpg) no-repeat;
     width: 184px;
     height: 162px;
-    background-size: 184px 162px;
     margin-left: 7px;
 }
 
@@ -758,7 +894,6 @@ header ul li > a {
     background: url(../image/sns3.jpg) no-repeat;
     width: 184px;
     height: 183px;
-    background-size: 184px 183px;
     margin: 23px 7px 0 0;
 }
 
@@ -766,7 +901,6 @@ header ul li > a {
     background: url(../image/sns4.jpg);
     width: 183px;
     height: 183px;
-    background-size: 183px 183px;
     margin: 23px 7px 0 6px;
 }
 
@@ -774,7 +908,6 @@ header ul li > a {
     background: url(../image/sns5.jpg);
     width: 184px;
     height: 183px;
-    background-size: 184px 183px;
     margin: 23px 0 0 7px;
 }
 
@@ -782,7 +915,6 @@ header ul li > a {
     background: url(../image/sns6.jpg);
     width: 184px;
     height: 161px;
-    background-size: 184px 161px;
     margin: 23px 7px 0 0;
 }
 
@@ -790,7 +922,6 @@ header ul li > a {
     background: url(../image/202106111040462188_l.jpg) no-repeat;
     width: 380px;
     height: 162px;
-    background-size: 380px 162px;
     margin: 23px 0 0 7px;
 }
 
@@ -857,7 +988,6 @@ iframe {
 
 input::placeholder {
     color: #fdfdfd;
-
 }
 
 .search-box > button {

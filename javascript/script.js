@@ -216,4 +216,8 @@ function moveSlider(time) {
 
 function input() {
     window.open("https://www.google.com/maps/search/%EB%A9%94%EA%B0%80%EC%BB%A4%ED%94%BC " + inputText.value + "/data=!3m1!4b1");
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3dd04458779fac77cee2d29f874b9e41cfc5d82d

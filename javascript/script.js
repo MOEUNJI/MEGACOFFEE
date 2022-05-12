@@ -1,3 +1,74 @@
+const content = document.getElementsByClassName('content');
+// 공통 클래스인 content 불러옴
+window.addEventListener('scroll', () => {
+    // 윈도우에 스크롤 했을 때
+    const winH = window.innerHeight;
+    // winH = 브라우저 위쪽에 잡다한거 빼고 콘텐츠가 표시되는 부분의 height만 대입함
+
+    for (let i = 0; i < content.length; i++) {
+        // i 가 content 의 갯수보다 작으면 i는 content의 갯수만큼 증가함
+        const contentTop = content[i].getBoundingClientRect().top;
+        // i 번째에 있는 요소의 top으로부터의 거리를 계산해서 contentTop에 대입함
+
+        //-------------- getBoundingClientRect()로 얻을 수 있는것들!!!---------------------
+        // top, bottom, left, right, width, height, x, y의 값이 출력됩니다.
+        // top or y - 화면 상단 부터 대상의 처음 위치 값
+        // bottom - 화면 상단 부터 대상의 끝 위치 값
+        // left or x - 화면 좌측 부터 대상의 처음 위치 값
+        // right - 화면 좌측 부터 대상의 끝 위치 값
+        // width - 대상의 길이
+        // height - 대상의 높이
+
+
+        if (contentTop - winH < 0) {
+            // i번째에 있는 요소의 화면 상단 부터 대상의 처음 위치 값 - 브라우저에서 콘텐츠가 표시되는 부분의 height 한게 0 보다 작으면
+            content[i].classList.add('in');
+            // content 의  i 번째에 있는 요소에 in 을 붙여준다
+        }
+        if (contentTop - winH > 0) {
+            // i번째에 있는 요소의 화면 상단 부터 대상의 처음 위치 값-브라우저에서 콘텐츠가 표시되는 부분의 height 한게 0 보다 크면 
+            content[i].classList.remove('in');
+            // content 의 i 번째에 있는 요소에 in 을 제거해서 스크롤을 올렸다가 다시 내려도 다시 작동하게 함
+        }
+    }
+})
+
+let containerFirst = document.getElementsByClassName("introduction-container")[0];
+// container = 버튼들이 들어있는 ul
+let controller = containerFirst.children[0];
+// controller = 버튼들이 들어있는 ul의 첫번째 li
+let liList = controller.children;
+
+let textArea = document.getElementsByClassName("text-area")[0];
+// textArea = 텍스트들이 들어있는 ul
+let textAreaUl = textArea.children[0];
+// textAreaUl = 텍스트들이 들어있는 ul의 첫번째 li
+let textAreaLi = textAreaUl.children;
+
+let n = 0;
+
+for (let i = 0; i < liList.length; i++) {
+    liList[i].index = i;
+
+    liList[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        n = e.currentTarget.index;
+
+
+        for (let j = 0; j < liList.length; j++) {
+            if (j == n) {
+                liList[j].classList.add("on");
+                textAreaLi[j].classList.add("active");
+            }
+            else {
+                liList[j].classList.remove("on");
+                textAreaLi[j].classList.remove("active");
+            }
+        }
+
+    });
+};
+
 const buttons = document.querySelector('.buttons');
 // 닷을 포함한 prev,next 를 모두 감싸는 버튼의 컨테이너
 const container = document.querySelector('.container');
@@ -50,14 +121,34 @@ container.children[0].style.transform = 'translateX(-' + (index * 1920) + 'px)';
 buttons.children[0].addEventListener('click', prev);
 buttons.children[1].addEventListener('click', next);
 
+setInterval(() => {
+    next();
+}, 5000);
+//5초에 한 번씩 next 함수 실행
+
+
+const inputText = document.getElementById("input-text");
+let btn = document.querySelector(".search-btn");
+btn.addEventListener("click", input);
+window.addEventListener("keyup", (e)=> {
+    if(e.key == "Enter" && inputText === document.activeElement) {
+        //inputText === document.activeElement (활성화된게 inputText 일때 엔터를 누르면 먹음(inputText 없으면 안 먹음))
+        input();
+    }
+});
+
+
+
+
+
+
+
 function prev() {
     if (moveCheck) {
         moveCheck = false;
-        console.log(moveCheck);
         // 연속으로 눌러 에러가 나는 현상을 방지하기 위해 prev 버튼을 클릭하면 더 이상 클릭하지 못하게 막음
         index--;
         // prev 버튼이니 이전으로 가야하므로 --
-        console.log(index);
 
         setTimeout(() => {
             if (index === 0) {
@@ -69,7 +160,6 @@ function prev() {
             moveCheck = true;
             // 왼쪽으로 가는 무빙이 끝난 후에 다시 prev 버튼을 클릭 할 수 있게 moveCheck 를 true로 바꿔줌
 
-            console.log(index + "," + moveCheck);
         }, 1000)
         moveSlider(1000);
     }
@@ -81,16 +171,15 @@ function next() {
         // 연속으로 눌러 에러가 나는 현상을 방지하기 위해 prev 버튼을 클릭하면 더 이상 클릭하지 못하게 막음
         index++;
         //  next 버튼이니 다음으로 가야하므로 ++
-        console.log(index);
 
         setTimeout(() => {
+            // 
             if (index === slider.childElementCount - 1) {
                 // 버튼을 눌러 인덱스가 6이 되었다면(노드 복사해서 insertBefore(last, slider.firstElementChild);로 넣어준 1번 화면이 되었다면)
                 index = 1;
                 // 인덱스에 1을 대입해준다 (0번은 복사해서 넣은 5번화면이기에 1번대입)
                 moveSlider(0);
             }
-            console.log(index);
             moveCheck = true;
             // 오른쪽으로 가는 무빙이 끝난 후에 다시 next 버튼을 클릭 할 수 있게 moveCheck 를 true로 바꿔줌
         }, 1000)
@@ -125,41 +214,6 @@ function moveSlider(time) {
 
 
 
-window.addEventListener("load", function () {
-    let container = document.getElementsByClassName("introduction-container")[0];
-    // container = 버튼들이 들어있는 ul
-    let controller = container.children[0];
-    // controller = 버튼들이 들어있는 ul의 첫번째 li
-    let liList = controller.children;
-
-    let textArea = document.getElementsByClassName("text-area")[0];
-    // textArea = 텍스트들이 들어있는 ul
-    let textAreaUl = textArea.children[0];
-    // textAreaUl = 텍스트들이 들어있는 ul의 첫번째 li
-    let textAreaLi = textAreaUl.children;
-
-    let n = 0;
-
-
-    for (let i = 0; i < liList.length; i++) {
-        liList[i].index = i;
-
-        liList[i].addEventListener("click", function (e) {
-            e.preventDefault();
-            n = e.currentTarget.index;
-
-
-            for (let j = 0; j < liList.length; j++) {
-                if (j == n) {
-                    liList[j].classList.add("on");
-                    textAreaLi[j].classList.add("active");
-                }
-                else {
-                    liList[j].classList.remove("on");
-                    textAreaLi[j].classList.remove("active");
-                }
-            }
-
-        });
-    }
-});
+function input() {
+    window.open("https://www.google.com/maps/search/%EB%A9%94%EA%B0%80%EC%BB%A4%ED%94%BC " + inputText.value + "/data=!3m1!4b1");
+}

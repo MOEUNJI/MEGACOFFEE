@@ -343,6 +343,11 @@ header ul li > a {
     z-index: 99999;
 }
 
+.mid-mg {
+    width: 500px;
+    height: 500px;
+}
+
 .title {
     width: 100%;
     height: 100px;
@@ -500,6 +505,10 @@ header ul li > a {
 
 .more-btn {
     margin: 40px 300px 0 0;
+}
+
+.menu-all-btn {
+    cursor: pointer;
 }
 
 .more-btn > button {
